@@ -50,3 +50,9 @@ and m.year between 1990 and 2000;
 
 
 # 6. Show the Quentin Tarantino films which have more than 500000 votes and produced before 2000.	 
+SELECT m.title, m.votes, m.year
+FROM movies m
+JOIN directors d ON m.director_id = d.director_id
+WHERE d.director_name = 'Quentin Tarantino'
+  AND m.votes > 500000
+  AND m.year < 2000;
